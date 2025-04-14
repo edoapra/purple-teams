@@ -166,11 +166,15 @@ teams_get_icon_queuepop(gpointer data)
 void
 teams_get_icon(PurpleBuddy *buddy)
 {
+#if 1
+	return;
+#else
 	if (!buddy) return;
 	if (purple_strequal(purple_core_get_ui(), "BitlBee"))
 		return;
 	
 	g_timeout_add(100, teams_get_icon_queuepop, (gpointer)buddy);
+#endif
 }
 
 typedef struct SkypeImgMsgContext_ {

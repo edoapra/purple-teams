@@ -1293,9 +1293,9 @@ gboolean
 teams_timeout(gpointer userdata)
 {
 	TeamsAccount *sa = userdata;
-	if (!purple_account_get_bool(sa->account, "only_use_websocket", FALSE)) {
-		teams_poll(sa);
-	}
+//	if (!purple_account_get_bool(sa->account, "only_use_websocket", FALSE)) {
+//		teams_poll(sa);
+//	}
 
 	// If no response within 1 minute, assume connection lost and try again
 	g_source_remove(sa->watchdog_timeout);
